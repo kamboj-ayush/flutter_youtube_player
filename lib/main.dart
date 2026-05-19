@@ -27,7 +27,7 @@ class YoutubeDemoScreen extends StatelessWidget {
 
   // Demo Video URL
   static const String videoUrl =
-      'https://www.youtube.com/watch?v=hlWiI4xVXKY&list=RDhlWiI4xVXKY&start_radio=1';
+      'https://www.youtube.com/watch?v=hsGWmUi1TQc&list=RDhsGWmUi1TQc&start_radio=1';
 
   @override
   Widget build(BuildContext context) {

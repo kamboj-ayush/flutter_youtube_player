@@ -1,6 +1,6 @@
-# 🎬 Flutter YouTube Player
+# Flutter YouTube Player
 
-A custom YouTube video player built with Flutter that provides full control over video playback **without using the official YouTube Player SDK**.
+A custom YouTube video player built with Flutter that provides full control over video playback without using the official YouTube Player SDK.
 
 This project uses:
 
@@ -9,23 +9,23 @@ This project uses:
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎮 Custom video controls
-- ⏯️ Play / Pause support
-- ⏩ Seek forward & backward
-- 🔊 Volume control
-- ⚡ Playback speed adjustment
-- 📱 Fullscreen landscape mode
-- 👀 Auto-hiding controls
-- ⏳ Buffering indicator
-- ❌ Graceful error handling
-- 📐 Responsive UI
-- 🎨 Material Design 3 support
+- Custom video controls
+- Play / Pause support
+- Seek forward & backward
+- Volume control
+- Playback speed adjustment
+- Fullscreen landscape mode
+- Auto-hiding controls
+- Buffering indicator
+- Graceful error handling
+- Responsive UI
+- Material Design 3 support
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 ```yaml
 dependencies:
@@ -38,22 +38,22 @@ dependencies:
 
 ---
 
-## 🚀 Installation
+## Installation
 
-### 1️⃣ Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone <repository-url>
 cd flutter_youtube_player
 ```
 
-### 2️⃣ Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 flutter pub get
 ```
 
-### 3️⃣ Run the App
+### 3. Run the App
 
 ```bash
 flutter run
@@ -61,13 +61,18 @@ flutter run
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```bash
 lib/
 ├── main.dart
 ├── youtube_player_widget.dart
 └── youtube_player_controller_helper.dart
+
+assets/
+└── screenshots/
+    ├── home.png
+    └── fullscreen.png
 ```
 
 ### File Overview
@@ -80,9 +85,9 @@ lib/
 
 ---
 
-# 🛠️ Usage
+## Usage
 
-## Basic Usage
+### Basic Usage
 
 ```dart
 import 'youtube_player_widget.dart';
@@ -94,12 +99,14 @@ YoutubePlayerWidget(
 
 ---
 
-## 💡 Example Implementation
+## Example Implementation
 
 ```dart
 class YoutubeDemoScreen extends StatelessWidget {
   static const String videoUrl =
       'https://www.youtube.com/watch?v=hlWiI4xVXKY';
+
+  const YoutubeDemoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -117,15 +124,13 @@ class YoutubeDemoScreen extends StatelessWidget {
 
 ---
 
-# ⚙️ How It Works
+## How It Works
 
-## 1️⃣ Video ID Extraction
+### 1. Video ID Extraction
 
 The `YoutubePlayerControllerHelper` extracts the 11-character YouTube video ID from different YouTube URL formats using regex.
 
----
-
-## 2️⃣ Stream Extraction
+### 2. Stream Extraction
 
 Using `youtube_explode_dart`, the app:
 
@@ -133,9 +138,7 @@ Using `youtube_explode_dart`, the app:
 - Selects the highest bitrate muxed stream
 - Retrieves the direct video stream URL
 
----
-
-## 3️⃣ Video Playback
+### 3. Video Playback
 
 The `video_player` package manages:
 
@@ -146,25 +149,21 @@ The `video_player` package manages:
 - Playback speed
 - Buffering states
 
----
-
-## 4️⃣ Custom Controls
-
-The player includes:
+### 4. Custom Controls
 
 | Control | Function |
 |---------|----------|
-| ▶️ Play/Pause | Toggle playback |
-| ⏪ -10s | Seek backward |
-| ⏩ +10s | Seek forward |
-| 📍 Progress Bar | Seek to position |
-| 🔊 Volume Slider | Adjust volume |
-| ⚡ Speed Menu | Change playback speed |
-| 📱 Fullscreen | Enter fullscreen mode |
+| Play/Pause | Toggle playback |
+| -10s | Seek backward |
+| +10s | Seek forward |
+| Progress Bar | Seek to position |
+| Volume Toggle | Mute / unmute |
+| Speed Menu | Change playback speed |
+| Fullscreen | Enter fullscreen mode |
 
 ---
 
-# 🖥️ Fullscreen Mode
+## Fullscreen Mode
 
 When fullscreen mode is enabled:
 
@@ -175,7 +174,7 @@ When fullscreen mode is enabled:
 
 ---
 
-# 🎛️ Controls Overview
+## Controls Overview
 
 | Action | Behavior |
 |--------|----------|
@@ -184,14 +183,14 @@ When fullscreen mode is enabled:
 | -10s button | Rewind 10 seconds |
 | +10s button | Forward 10 seconds |
 | Progress bar | Seek video |
-| Volume slider | Adjust volume |
+| Volume button | Mute / unmute |
 | Speed button | Change speed |
 | Fullscreen button | Open fullscreen |
 | Back button | Exit fullscreen |
 
 ---
 
-# ❗ Error Handling
+## Error Handling
 
 The app handles:
 
@@ -199,61 +198,48 @@ The app handles:
 - Internet/network issues
 - Stream extraction failures
 - Playback errors
+- Request limit exceptions
 
 Friendly error messages are displayed inside the player UI.
 
 ---
 
-# 📱 Platform Support
+## Platform Support
 
 | Platform | Support |
 |----------|---------|
-| Android | ✅ Full Support |
-| iOS | ✅ Supported |
-| Web | ⚠️ Limited Support |
+| Android | Full Support |
+| iOS | Supported |
+| Web | Limited Support |
 
 ---
 
-# ⚠️ Important Notes
+## Important Notes
 
 - This project bypasses YouTube’s official player SDK
 - It may not comply with YouTube Terms of Service
 - For production apps, consider using:
-   - `youtube_player_flutter`
+  - `youtube_player_flutter`
 - Video quality is automatically selected as the best available stream
 - Some videos may be region or copyright restricted
+- Excessive requests may trigger YouTube rate limiting
 
 ---
 
-# 📸 Screenshots
+## Screenshots
 
-> Add your app screenshots here
-
-```md
-![Home Screen](screenshots/home.png)
-![Fullscreen](screenshots/fullscreen.png)
-```
+| Home Screen | Fullscreen |
+|-------------|------------|
+| ![](assets/screenshots/home.png) | ![](assets/screenshots/fullscreen.png) |
 
 ---
 
-# 🤝 Contributing
+## License
 
-Contributions are welcome!
-
-Feel free to:
-
-- Fork the repository
-- Create a feature branch
-- Submit a pull request
+This project is for educational purposes only.
 
 ---
 
-# 📄 License
+## Flutter YouTube Player
 
-This project is for **educational purposes only**.
-
----
-
-# ❤️ Flutter YouTube Player
-
-Built with Flutter 🚀
+Built with Flutter.
